@@ -1,0 +1,6 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        indices = [idx for idx, value in enumerate(nums) if value == target]
+        if not indices:
+            return [-1, -1]
+        return [indices[0], indices[-1]]
