@@ -1,0 +1,23 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def getDecimalValue(self, head: Optional[ListNode]) -> int:
+        def link(head):
+            output = []
+            current = head
+
+            while current:
+                output.append(current.val)
+                current = current.next
+            return output
+
+        result = int("".join(map(str, link(head))))
+
+        def int_to_binary(result):
+            decimal = 0
+            for digit in str(result):
+                decimal = decimal * 2 + int(digit)
+            return decimal
+        return int_to_binary(result)
