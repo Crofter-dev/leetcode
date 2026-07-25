@@ -1,0 +1,10 @@
+from itertools import groupby
+
+class Solution:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        sorted_strs = sorted(strs, key=sorted)
+        res = []
+        for key, group in groupby(sorted_strs, key=sorted):
+            res.append(list(group))
+            
+        return res
