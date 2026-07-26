@@ -1,0 +1,11 @@
+import math
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        ways = 0
+        for twos in range(n // 2 + 1):
+            ones = n - (2 * twos)
+            total_moves = ones + twos
+            ways += math.comb(total_moves, twos)
+            
+        return ways
