@@ -1,0 +1,9 @@
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        i = len(matrix)
+        j = len(matrix[0])
+        for m in range(i):
+            for n in range(j):
+                if matrix[m][n] == target:
+                    return True
+        return False
