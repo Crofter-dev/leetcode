@@ -1,0 +1,8 @@
+class Solution:
+    def generate(self, numRows: int) -> list[list[int]]:
+        res = [[1]]
+        for _ in range(numRows - 1):
+            dummy1 = [0] + res[-1]
+            dummy2 = res[-1] + [0]
+            res.append([a + b for a, b in zip(dummy1, dummy2)])
+        return res[:numRows]
