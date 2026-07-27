@@ -1,0 +1,6 @@
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        import math
+        nums.sort()
+        diff = [x-1 for x in nums[-2:]]
+        return math.prod(diff)
