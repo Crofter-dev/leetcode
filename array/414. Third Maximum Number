@@ -1,0 +1,9 @@
+class Solution:
+    def thirdMax(self, nums: list[int]) -> int:
+        top_three = set()
+        
+        for num in nums:
+            top_three.add(num)
+            if len(top_three) > 3:
+                top_three.remove(min(top_three))
+        return min(top_three) if len(top_three) == 3 else max(top_three)
