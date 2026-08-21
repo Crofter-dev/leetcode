@@ -1,0 +1,8 @@
+class Solution:
+    def isNumber(self, s: str) -> bool:
+        if s.strip("+-").lower() in ["inf", "infinity", "nan"]:
+            return False
+        try:
+            return float(s) is not None
+        except ValueError:
+            return False
