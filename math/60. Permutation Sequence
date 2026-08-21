@@ -1,0 +1,6 @@
+from itertools import islice, permutations
+class Solution:
+    def getPermutation(self, n: int, k: int) -> str:
+        nums = [str(i) for i in range(1, n + 1)]
+        k_th_permutation = next(islice(permutations(nums), k - 1, None))
+        return "".join(k_th_permutation)
