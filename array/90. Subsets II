@@ -1,0 +1,10 @@
+import itertools
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        subsets = set()
+        
+        for r in range(len(nums) + 1):
+            for combo in itertools.combinations(nums, r):
+                subsets.add(tuple(sorted(combo)))
+                
+        return [list(combo) for combo in subsets]
