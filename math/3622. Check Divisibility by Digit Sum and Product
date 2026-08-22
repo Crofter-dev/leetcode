@@ -1,0 +1,12 @@
+import math
+class Solution:
+    def checkDivisibility(self, n: int) -> bool:
+        digits = [int(d) for d in str(n)]
+        total_sum = sum(digits)
+        total_prod = math.prod(digits)
+        
+        divisor = total_sum + total_prod
+        if divisor == 0:
+            return False
+            
+        return n % divisor == 0
