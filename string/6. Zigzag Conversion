@@ -1,0 +1,15 @@
+class Solution:
+    def convert(self, s: str, numRows: int) -> str:
+        if numRows == 1 or numRows >= len(s):
+            return s
+
+        rows = ['']*numRows
+        curr_rows = 0
+        direction = -1
+
+        for char in s:
+            rows[curr_rows] += char
+            if curr_rows == 0 or curr_rows == numRows-1:
+                direction*=-1
+            curr_rows += direction
+        return ''.join(rows)
